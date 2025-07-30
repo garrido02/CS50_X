@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+
+
+{% block main %}
+    {% for row in pack %}
+        <!-- Image and benefits -->
+        <div id="sized" class="section _100vh flex-split dark-grey-fill wf-section">
+            <div class="split-div left section-padding"><p class="h2-small small-caps-2" style="color: white;">PACOTE {{ row.name }}</p>
+                <div><h3 class="small-caps-2" style="color: #ff4500;">Benefícios</h3>
+                    <div class="space-16"></div>
+                </div>
+                <div id="sized2" class="invert-program-rich-text w-richtext small-caps-2" style="font-size: 14px;">
+                    <blockquote>{{ row.description_1 }}</blockquote>
+                    <blockquote>{{ row.description_2 }}</blockquote>
+                    <blockquote>{{ row.description_3 }}</blockquote>
+                    <blockquote>{{ row.description_4 }}</blockquote>
+                    <blockquote>{{ row.description_5 }}</blockquote>
+                    <blockquote>{{ row.description_6 }}</blockquote>
+                </div>      
+            </div>
+            <div style="background-image: url({{ row.image }})" class="split-image desktop"></div>
+        </div>
+    {% endfor %}
+
+        <!-- Install App -->
+    {% for row in pack %}
+        <div class="section split-absolute-image tablet-vertical wf-section">
+            <div class="container right-text tab-et-relative">
+                <div class="div-50 tablet-100 mobile-centre-align">
+                    <div class="space-80 portrait-hide"></div>
+                    <br>
+                    <br>
+                    <h2 style="color: #212529" class="h2-small small-caps-2">Instala a nossa app</h2>
+                    <div class="space-16"></div>
+                    <div class="program-rich-text w-richtext mobile-centre-align">
+                        <br>
+                        <h3 class="small-caps-2 mobile-centre-align" style="color: dark-gr; font-size: 22px;">Uma aplicação desenhada para ti</h3>
+                        <br>
+                        <p style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">A nossa aplicação permite uma rápida instalação para começares a treinar o mais rápido possível.</p>
+                        <br>
+                        <h3 class="small-caps-2 mobile-centre-align" style="color: dark-gray; font-size: 22px;">Junta-te a uma comunidade</h3>
+                        <br>
+                        <p style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">Entra na nossa comunidade, onde terás acesso a um chat 24/7 para colocares as tuas questões!</p>
+                        <br>
+                        <div class="_940-container centred-text mobile-centre-align tablet-hide">
+                            <div class="space-16"></div>
+                            <div><a href="https://play.google.com/store/apps/details/Fitr_Client_App?id=com.fitr_training.client&pli=1" class="button">Instala a App</a></div></div>
+                    </div>
+                <!-- phone video -->
+                    <div class="space-80 tablet-hide"></div>
+                    <div class="tablet-image">
+                        <video width="80%" muted autoplay playsinline loop data-object fit="cover">
+                            <source src="/static/fitr_app.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="_940-container centred-text mobile-centre-align desktop-hide">
+                        <div class="space-16"></div>
+                        <div><a class="button">Instala a App</a></div>
+                    </div>
+                </div>
+                <!-- normal video-->
+                <div class="left-absolute-image tablet-hide">
+                    <video width="80%" muted autoplay playsinline loop data-object fit="cover">
+                        <source src="/static/fitr_app.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+  
+
+
+    <!-- Buy Program -->
+    {% for row in pack %}
+         <div id="container-buy" class="section split-absolute-image tablet-vertical wf-section">
+            <div class="container left-text tab-et-relative">
+                <div class="div-50 tablet-100 mobile-centre-align">
+                    <div class="space-80 portrait-hide"></div>
+                    <br>
+                    <br>
+                    <h2 style="color: #212529" class="h2-small small-caps-2">Inicia a tua jornada</h2>
+                    <div class="space-16"></div>
+                    <div class="program-rich-text w-richtext mobile-centre-align">
+                        <br>
+                        <h3 class="small-caps-2 mobile-centre-align" style="color: dark-gray; font-size: 22px;">Fácil de começar</h3>
+                        <br>
+                        <p style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">Escolhe o programa que desejas, procede ao pagamento e começa a treinar imediatamente.</p>
+                        <br>
+                        <h3 class="small-caps-2 mobile-centre-align" style="color: dark-gray; font-size: 22px;">Treina ao teu ritmo</h3>
+                        <br>
+                        <p style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">Tens uma data específica para começar? Não te preocupes podes escolher a data que quiseres!</p>
+                        <br>
+                        <div class="_940-container centred-text mobile-centre-align tablet-hide">
+                            <div class="space-16"></div>
+                            <p style="font-size: 16px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">Garante que tens a tua sessão iniciada</p>
+                            <div><a href="https://app.fitr.training/plan/{{ row.fitr_code }}/purchase?" class="button">Quero começar</a></div>
+                        </div>
+                    </div>
+
+                    <!-- phone video -->
+                    <div class="space-80 tablet-hide"></div>
+                    <div class="tablet-image">
+                        <video width="80%" muted autoplay playsinline loop data-object fit="cover">
+                            <source src="/static/{{ row.short }}.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="_940-container centred-text mobile-centre-align desktop-hide">
+                        <div class="space-16"></div>
+                        <p style="font-size: 16px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">Garante que tens a tua sessão iniciada</p>
+                        <div><a href="https://app.fitr.training/plan/{{ row.fitr_code }}/purchase?" class="button">Quero Começar</a></div>
+                    </div>
+                </div>
+
+                <!-- normal video-->
+                <div class="right-absolute-image tablet-hide">
+                    <video style="padding-right: 20px" width="80%" muted autoplay playsinline loop data-object fit="cover">
+                        <source src="/static/{{ row.short }}.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div> 
+    {% endfor %}
+{% endblock %}
+
+

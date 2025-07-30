@@ -1,0 +1,320 @@
+{% extends "layout.html" %}
+
+
+{% block header %}          
+<header href="top" class="bgimg-1 w3-display-container w3-grayscale-min" style="background-image: url(/static/background_fullbody.jpg);" id="home">
+    <!-- Desktop Version -->
+    <div class="w3-display-left tablet-hide w3-text-white" style="padding: 48px;">
+        <span class="w3-jumbo w3-hide-small small-caps-2" style="color: white">Evoluí Connosco</span><br>
+        <span class="w3-xxlarge w3-hide-large w3-hide-medium small-caps-2" style="color: white;">Evoluí Connosco</span><br>
+        <span class="w3-large small-caps-2" style="color: white;">Deixa de gastar tempo valioso sem obteres resultados</span>
+        <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off small-caps-2">A evolução começa agora<i class="fa fa-arrow-down w3-margin-left"></i></a></p>
+    </div>
+    <!-- Phone Version -->
+    <div class="w3-display-left desktop-hide w3-text-white">
+        <span class="w3-jumbo w3-hide-small small-caps-2" style="color: white">Evoluí Connosco</span><br>
+        <span class="w3-xxlarge w3-hide-large w3-hide-medium small-caps-2" style="color: white;">Evoluí Connosco</span><br>
+        <span class="w3-large small-caps-2" style="color: white;">Deixa de gastar tempo valioso sem obteres resultados</span>
+        <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off small-caps-2">A evolução começa agora<i class="fa fa-arrow-down w3-margin-left"></i></a></p>
+    </div>
+    <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
+        <i id="instagram_header" class="fa fa-instagram w3-hover-opacity instagram" onclick="instagram()"></i>
+    </div>
+</header>
+{% endblock %}
+
+
+{% block main %}
+
+            <!-- About Section -->
+            <div class="w3-container" id="about">
+                <h2 class="w3-center small-caps-2" style="color: #212529; font-size: 30px;">QUEM SOMOS</h2>
+                <div class="w3-row-padding mobile-centre-align" style="margin-top:64px">
+                    <div class="w3-quarter mobile-centre-align w3-center">
+                        <i class="w3-center fa fa-desktop w3-margin-bottom w3-jumbo w3-center" style="color: #212529"></i>
+                        <p class="w3-center small-caps-2 mobile-centre-align" style="color: dark-gray; font-size: 22px;">Acessibilidade</p>
+                        <p class="w3-center" style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">Queremos oferecer um serviço acessível onde tu quiseres, quando quiseres</p>
+                    </div>
+                    <div class="w3-quarter mobile-centre-align w3-center">
+                        <i class="w3-center mobile-centre-align fa fa-bullseye w3-margin-bottom w3-jumbo" style="color: #212529"></i>
+                        <p class="w3-center small-caps-2 mobile-centre-align" style="color: dark-gray; font-size: 22px;">Missão</p>
+                        <p class="w3-center mobile-centre-align" style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">Influenciar a nossa comunidade a adotar hábitos saudáveis e o gosto pelo treino</p>
+                    </div>
+                    <div class="w3-quarter mobile-centre-align w3-center">
+                        <i class="w3-center mobile-centre-align fa fa-book w3-margin-bottom w3-jumbo" style="color: #212529"></i>
+                        <p class="w3-center small-caps-2 mobile-centre-align" style="color: dark-gray; font-size: 22px;">Evidência</p>
+                        <p class="w3-center mobile-centre-align" style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">Oferecer treinos com base em conhecimento científico, desenhados por profissionais com as melhores certificações do mercado</p>
+                    </div>
+                    <div class="w3-quarter mobile-centre-align w3-center">
+                        <i class="w3-center mobile-centre-align fa fa-handshake-o w3-margin-bottom w3-jumbo" style="color: #212529"></i>
+                        <p class="w3-center small-caps-2 mobile-centre-align" style="color: dark-gray; font-size: 22px;">Apoio</p>
+                        <p class="w3-center mobile-centre-align" style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">Durante a tua jornada terás acesso a um chat privado com os teus treinadores, para que nunca te sintas sozinho</p>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <!-- Team Section -->
+            <div class="w3-container" id="team">
+                <h2 class="w3-center small-caps-2" style="color: #212529; font-size: 30px;">A EQUIPA</h2>
+                <br>
+                <p class="w3-center" style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">As caras por detrás dos treinos</p>
+                
+                <!-- Trainer -->
+                {% for row in team1 %}
+                    <div class="section split-absolute-image tablet-vertical wf-section">
+                        <div class="container right-text tab-et-relative program-rich-text w-richtext mobile-centre-align">
+                            <div class="div-50 tablet-100 mobile-centre-align">
+                                <div class="space-80 portrait-hide"></div>
+                                <br>
+                                <br>
+                                <h2 style="color: #212529" class="h2-small small-caps-2">{{ row.name }}</h2>
+                                <div class="space-16"></div>
+                                <div class="program-rich-text w-richtext mobile-centre-align">
+                                    <br>
+                                    <h3 class="small-caps-2 mobile-centre-align" style="color: dark-gray; font-size: 22px;">{{ row.title }} </h3>
+                                    <br>
+                                    <p style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">{{ row.description1 }}</p>
+                                    <br>
+                                    <p style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">{{ row.description2 }}</p>
+                                    <br>
+                                    <div class="_940-container centred-text mobile-centre-align tablet-hide">
+                                        <div class="space-16"></div>
+                                        <div><a onclick="trainer('{{ row.link }}')" class="button">Contacta {{ row.short }}</a></div></div>
+                                </div>
+                            <!-- phone image -->
+                                <div class="space-80 tablet-hide"></div>
+                                <div class="tablet-image" fit="cover">
+                                    <img src="{{ row.image }}"></img>
+                                </div>
+                                <div class="_940-container centred-text mobile-centre-align desktop-hide">
+                                    <div class="space-16"></div>
+                                    <div><a onclick="trainer('{{ row.link }}')" class="button">Contacta {{ row.short }}</a></div>
+                                </div>
+                            </div>
+                            <!-- normal image-->
+                            <div class="left-absolute-image tablet-hide" style="top: 15%">
+                                <img src="{{ row.image }}"></img>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                {% for row in team2 %}
+                <div id="container-buy" class="section split-absolute-image tablet-vertical wf-section">
+                   <div class="container left-text tab-et-relative program-rich-text w-richtext mobile-centre-align">
+                       <div class="div-50 tablet-100 mobile-centre-align">
+                           <div class="space-80 portrait-hide"></div>
+                           <h2 style="color: #212529" class="h2-small small-caps-2">{{ row.name }}</h2>
+                           <div class="space-16"></div>
+                           <div class="program-rich-text w-richtext mobile-centre-align">
+                               <br>
+                               <h3 class="small-caps-2 mobile-centre-align" style="color: dark-gray; font-size: 22px;">{{ row.title }}</h3>
+                               <br>
+                               <p style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">{{ row.description1 }}</p>
+                               <br>
+                               <p style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">{{ row.description2 }}</p>
+                               <br>
+                               <div class="_940-container centred-text mobile-centre-align tablet-hide">
+                                   <div class="space-16"></div>
+                                   <div><a onclick="trainer('{{ row.link }}')" class="button">Contacta {{ row.short }}</a></div>
+                               </div>
+                           </div>
+       
+                           <!-- phone image -->
+                           <div class="space-80 tablet-hide"></div>
+                           <div class="tablet-image" fit="cover">
+                               <img src="{{ row.image }}"></img>
+                           </div>
+                           <div class="_940-container centred-text mobile-centre-align desktop-hide">
+                               <div class="space-16"></div>
+                               <div><a onclick="trainer('{{ row.link }}')" class="button">Contacta {{ row.short }}</a></div>
+                           </div>
+                       </div>
+       
+                       <!-- normal image-->
+                       <div class="right-absolute-image tablet-hide" style="top: 0%; left:57%;">
+                           <img src="{{ row.image }}" fit="cover"><img>
+                       </div>
+                   </div>
+               </div> 
+           {% endfor %}
+            </div>
+
+
+            <!-- Promo Section "Statistics" -->
+            <div class="w3-container w3-row w3-center w3-padding-64" style="background-color: #212529; color:white">
+                <div class="w3-quarter" style="align-items: center; justify-content: center;">
+                    <span class="w3-xxlarge" style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">20+</span>
+                    <br>
+                    <p style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">Alunos</p>
+                </div>
+                <div class="w3-quarter">
+                    <span class="w3-xxlarge" style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">8+</span>
+                    <br>
+                    <p style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">Programas de Treino</p> 
+                </div>
+                <div class="w3-quarter">
+                    <span class="w3-xxlarge" style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">10+</span>
+                    <br>
+                    <p style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">Dicas Saudáveis</p>
+                </div>
+                <div class="w3-quarter">
+                    <span class="w3-xxlarge" style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">150+</span>
+                    <br>
+                    <p style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">Mensagens de Elogio</p>
+
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <!-- Menu Container -->
+            <div class="w3-container" id="wod">
+                <div class="w3-content" style="max-width:700px">
+                    <p class="w3-center small-caps-2" style="color: #212529; font-size: 30px;">Workout da semana</p>
+                    <p class="w3-center" style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">Experimenta um dos nossos treinos</p>
+                        <div class="w3-row w3-center w3-card w3-padding"  style="margin-top:64px;">
+                        
+                        <a href="javascript:void(0)" onclick="openMenu(event, 'easy')" id="myLink">
+                        <div class="w3-col s6 tablink"><h5 style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">Iniciante</h5></div>
+                        </a>
+                        <a href="javascript:void(0)" onclick="openMenu(event, 'hard')">
+                        <div class="w3-col s6 tablink"><h5 style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">Avançado</h5></div>
+                        </a>
+                    </div>
+
+                    <div id="easy" class="w3-container menu w3-padding-48 w3-card">
+                        <h5 id="series" style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">3 Séries - 30'' descanso entre séries</h5>
+                        <br>
+                        {% for row in workout_f %}
+                            <h5 style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">{{ row.name }}</h5>
+                            <p class="w3-text-grey" style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">{{ row.description }}</p>
+                            <br>
+                        {% endfor %}       
+                    </div>
+                    <div id="hard" class="w3-container menu w3-padding-48 w3-card">
+                        <h5 id="series" style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">3 Séries - 30'' descanso entre séries</h5>
+                        <br>
+                        {% for row in workout_h %}
+                            <h5 style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">{{ row.name }}</h5>
+                            <p class="w3-text-grey" style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">{{ row.description }}</p>
+                            <br> 
+                        {% endfor %}
+                    </div>  
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <!-- Programas Section -->
+            <div class="w3-container" id="pack">
+                <p class="w3-center small-caps-2" style="color: #212529; font-size: 30px;">Pacotes</p>
+                <p class="w3-center" style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">Os nossos programas de 1 mês. Compra uma vez, usa quando quiseres!</p>
+                <div class="w3-row-padding pacote" style="margin-top:64px">
+                    {% for row in pack %}
+                        <div class="w3-col l3 m6 w3-margin-bottom">
+                            <img src="{{ row.image }}" id="{{ row.short }}" style="width:100%" class="w3-hover-opacity" alt="{{ row.alt }}" onclick="openPage('{{ row.short }}')">
+                        </div>
+                    {% endfor %}   
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <!-- Sub Pricing Section -->
+            <p class="w3-center small-caps-2" style="color: #212529; font-size: 30px;">Subscrições</p>
+            <p class="w3-center" style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">Temos várias opções consoante as tuas necessidades!</p>
+            <div style="margin-top:64px"></div>
+            <div class="w3-container w3-row w3-center w3-padding-64 w3-black">
+                <div class="w3-row-padding">
+                    <div class="w3-third w3-section">
+                        {% for row in sub1 %}
+                            <ul class="w3-ul w3-white w3-hover-shadow">
+                                <li class=" w3-xlarge w3-padding-32 small-caps-2 mobile-centre-align" style="background-color: black; color: white; font-size: 22px;">{{ row.name }}</li>
+                                <li class="w3-padding-16" style="font-size: 18px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400">{{ row.benefit_1 }} treinos por semana</li>
+                                <li class="w3-padding-16" style="font-size: 18px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">{{ row.benefit_2 }} minutos</li>
+                                <li class="w3-padding-16" style="font-size: 18px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">app totalmente gratuita</li>
+                                <li class="w3-padding-16" style="font-size: 18px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">24/7 chat de treino</li>
+                                <li class="w3-padding-16">
+                                    <h2 class="w3-wide mobile-centre-align" style="font-size: 22px; color: black"><b>€{{ row.price }}</b></h2>
+                                    <span class="w3-opacity centre" style="font-size: 16px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">por mês</span>
+                                </li>
+                                <li class="w3-light-grey w3-padding-24">
+                                    <button class="button" onclick="sub('sub-basic')">Inscrever</button>
+                                </li>
+                            </ul>
+                        {% endfor %}
+                    </div>
+                    <div class="w3-third">
+                        {% for row in sub2 %}
+                            <ul class="w3-ul w3-white w3-hover-shadow">
+                                <li style="background-color: #ff2800; color: white" class="w3-xlarge w3-padding-48 small-caps-2 mobile-centre-align" style="font-size: 22px;">{{ row.name }}</li>
+                                <li class="w3-padding-16" style="font-size: 18px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">{{ row.benefit_1 }} Treinos por semana</li>
+                                <li class="w3-padding-16" style="font-size: 18px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">{{ row.benefit_2 }} Minutos</li>
+                                <li class="w3-padding-16" style="font-size: 18px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">app totalmente gratuita</li>
+                                <li class="w3-padding-16" style="font-size: 18px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">24/7 Chat de treino</li>
+                                <li class="w3-padding-16">
+                                    <h2 class="w3-wide mobile-centre-align" style="font-size: 22px; color: black"><b>€{{ row.price }}</b></h2>
+                                    <span class="w3-opacity centre" style="font-size: 16px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">por mês</span>
+                                </li>
+                                <li class="w3-light-grey w3-padding-24">
+                                    <button class="button" onclick="sub('sub-advanced')">Inscrever</button>
+                                </li>
+                            </ul>
+                        {% endfor %}
+                    </div>
+                    <div class="w3-third w3-section">
+                        {% for row in sub3 %}
+                            <ul class="w3-ul w3-white w3-hover-shadow">
+                                <li class=" w3-xlarge w3-padding-32 small-caps-2 mobile-centre-align" style="background-color: black; color: white; font-size: 22px;">{{ row.name }}</li>
+                                <li class="w3-padding-16" style="font-size: 18px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">{{ row.benefit_1 }} total</li>
+                                <li class="w3-padding-16" style="font-size: 18px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">{{ row.benefit_2 }} física mensal</li>
+                                <li class="w3-padding-16" style="font-size: 18px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">app totalmente gratuita</li>
+                                <li class="w3-padding-16" style="font-size: 18px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">24/7 Chat de treino</li>
+                                <li class="w3-padding-16">
+                                    <h2 class="w3-wide mobile-centre-align" style="font-size: 22px; color: black"><b>€{{ row.price }}</b></h2>
+                                    <span class="w3-opacity centre" style="font-size: 16px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">por mês</span>
+                                </li>
+                                <li class="w3-light-grey w3-padding-24">
+                                    <button class="button" onclick="sub('sub-personalized')">Inscrever</button>
+                                </li>
+                            </ul>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <!-- Contact Section -->
+            <div class="w3-container" id="contact">
+                <h2 class="w3-center small-caps-2" style="color: #212529; font-size: 30px;">Contactos</h2>
+                <br>
+                <p class="w3-center" style="font-size: 22px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;">Entra em contacto connosco</p>
+                <div style="margin-top:48px">
+                    <p style="font-size: 18px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;"><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Lisboa, Portugal</p>
+                    <p style="font-size: 18px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;"><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Telefone: +351 926 858 480</p>
+                    <p style="font-size: 18px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;"><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: maxyourworkout@gmail.com</p>
+                    <br>
+                    <form action="/" method="post">
+                        <p><input id="name" class="w3-input w3-border" type="text" placeholder="Name" required name="Name" style="font-size: 18px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;"></p>
+                        <p><input id="email" class="w3-input w3-border" type="text" placeholder="Email" required name="Email" style="font-size: 18px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;"></p>
+                        <p><input id="subject" class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject" style="font-size: 18px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;"></p>
+                        <p><input id="message" class="w3-input w3-border" type="text" placeholder="Message" required rows="5" name="Message" style="font-size: 18px; line-height: 1.4; font-family: proxima-nova, sans-serif; font-weight: 400;" ></p>
+                        <br>
+                        <br>
+                        <div class="_940-container centred-text mobile-centre-align tablet-hide">
+                            <div class="space-16"></div>
+                            <div><a onclick="sendMail()" class="button">Enviar</a></div>
+                        </div>
+                        <div class="_940-container centred-text mobile-centre-align desktop-hide">
+                            <div class="space-16"></div>
+                            <div><a onclick="sendMail()" class="button">Enviar</a></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <br>
+            <br>
+{% endblock %}

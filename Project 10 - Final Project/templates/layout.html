@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>    
+        <!-- Port to mobile users -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- link styles -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <link href="https://assets.website-files.com/61c2f086d385db179866da52/css/hwpotraining.b0c3452f8.min.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link href="/static/static.css" rel="stylesheet">
+        
+
+        <!-- Set icon on title page-->
+        <link rel="icon" href="/static/max_logo_notext_black.jpg">
+
+        <!-- Javascript link-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+        <script src="/static/script.js" type="text/javascript"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+
+        <!-- Tittle of webpage-->
+        <title>Max Your Workout {% block title %}{% endblock %}</title>
+    </head>
+    <body>
+
+            <!-- Navbar (sit on top) -->
+            <div class="w3-top" id="navbar" style="position:fixed; width:100%">
+                <div class="w3-bar w3-card" id="myNavbar" style="background-color: black">
+                    <a href="/" class="w3-bar-item w3-wide">
+                    <img style="width: 100%; height: 75px;" class="logo" src="/static/max_logo_notext_black.jpg">
+                    </a>
+                <!-- Right-sided navbar links -->
+                    <div class="w3-right w3-hide-small small-caps-2" style="color: white; font-size: 18px;">
+                        <a href="/#about" class="w3-bar-item w3-button">SOBRE</a>
+                        <a href="/#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> A EQUIPA</a>
+                        <a href="/#wod" class="w3-bar-item w3-button"><i class="fa fa-tasks"></i> WOD</a>
+                        <a href="/#pack" class="w3-bar-item w3-button"><i class="fa fa-th"></i> PACOTES</a>
+                        <a href="/#subs" class="w3-bar-item w3-button"><i class="fa fa-euro"></i> SUBSCRIÇÕES</a>
+                        <a href="/#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACTOS</a>
+                    </div>
+                    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+                    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+                    <i class="fa fa-bars" style="color: white"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Sidebar on small screens when clicking the menu icon -->
+            <nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-hide-large small-caps-2" style="display:none; color: white; background-color: black;" id="mySidebar">
+            <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16" style="font-size: 18px;">×</a>
+            <a href="/#about" onclick="w3_close()" class="w3-bar-item w3-button">SOBRE</a>
+            <a href="/#team" onclick="w3_close()" class="w3-bar-item w3-button">A EQUIPA</a>
+            <a href="/#wod" onclick="w3_close()" class="w3-bar-item w3-button">WOD</a>
+            <a href="/#pack" onclick="w3_close()" class="w3-bar-item w3-button">PACOTES</a>
+            <a href="/#subs" onclick="w3_close()" class="w3-bar-item w3-button">SUBSCRIÇÕES</a>
+            <a href="/#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACTOS</a>
+            </nav>
+            
+            <!-- header -->
+            {% block header %}{% endblock %}
+
+            <!-- main -->
+            <main>
+            <!-- Layout for different pages -->
+                {% block main %}{% endblock %}
+            </main>
+            
+            <!-- Footer -->
+            <footer class="w3-center w3-padding-64" style="background-color: black">
+                <a href="#top" class="w3-button w3-light-grey small-caps-2" style="font-size: 18px;"><i class="fa fa-arrow-up w3-margin-right"></i>Voltar ao ínicio</a>
+                <div class="w3-xlarge w3-section">
+                    <i id="instagram_footer" class="fa fa-instagram w3-hover-opacity instagram" onclick="instagram()" style="color:white;"></i>
+                </div>
+                <p style="color: white" class="small-caps-2">MaxyourWorkout</p>
+            </footer>
+
+    </body>
+</html>
