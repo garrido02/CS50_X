@@ -1,4 +1,4 @@
-### Project 2 - Algorithms:
+### Project 3 - Algorithms:
 
 #### 3a - Plurality
 
