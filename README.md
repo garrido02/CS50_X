@@ -11,3 +11,5 @@ All projects from CS50’s Introduction to Computer Science. For details on each
 #### Project 8 - HTML, CSS, JavaScript
 #### Project 9 - Flask
 #### Project 10 - Final Project
+
+<img width="2112" height="1632" alt="CS50x" src="https://github.com/user-attachments/assets/0383e49d-ad2b-4d8e-b26e-6e7347faa74a" />
